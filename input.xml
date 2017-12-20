@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <st3:Pharmaceuticals xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         xmlns:st3="http://nure.ua/garmash/SummaryTask3/entity"
+                         xsi:schemaLocation="http://nure.ua/garmash/SummaryTask3/entity input.xsd">
+    <Medicine id="1">
+        <name>Metronidazoli</name>
+        <pharm>Berlin Chemie</pharm>
+        <group>Antibiotics</group>
+        <analogs>Metresa</analogs>
+        <analogs>Sufer</analogs>
+        <Versions>
+            <Version versionNo="1">
+                <drugType>solution</drugType>
+                <pharmAnalog>Berlin Chemie</pharmAnalog>
+                <Certificate>
+                    <certificateNo>12345</certificateNo>
+                    <validationDate>2001-01-01</validationDate>
+                    <validationExpire>2011-01-01</validationExpire>
+                    <organisation>Organisation Name</organisation>
+                </Certificate>
+                <Package>
+                    <type>package</type>
+                    <amount>10</amount>
+                    <price>29.95</price>
+                </Package>
+                <dosage>1 amp 3 times a day intravenous + 200.0 NaCl 0.9%</dosage>
+            </Version>
+            <Version versionNo="2">
+                <drugType>tabs</drugType>
+                <pharmAnalog>Darnica</pharmAnalog>
+                <Certificate>
+                    <certificateNo>234575</certificateNo>
+                    <validationDate>2016-02-03</validationDate>
+                    <validationExpire>2017-12-31</validationExpire>
+                    <organisation>Organisation Name2</organisation>
+                </Certificate>
+                <Package>
+                    <type>package</type>
+                    <amount>30</amount>
+                    <price>57.00</price>
+                </Package>
+                <dosage>1 amp 3 times a day intravenous + 200.0 NaCl 0.9%</dosage>
+            </Version>
+        </Versions>
+    </Medicine>
+    <Medicine id="2">
+        <name>penicillini</name>
+        <pharm>Berlin Chemie</pharm>
+        <group>Antibiotics</group>
+        <analogs>Ampicillini</analogs>
+        <Versions>
+            <Version versionNo="1">
+                <drugType>solution</drugType>
+                <pharmAnalog>Berlin Chemie</pharmAnalog>
+                <Certificate>
+                    <certificateNo>2345</certificateNo>
+                    <validationDate>2001-01-01</validationDate>
+                    <validationExpire>2011-01-01</validationExpire>
+                    <organisation>Organization Name</organisation>
+                </Certificate>
+                <Package>
+                    <type>amp</type>
+                    <amount>5</amount>
+                    <price>19.95</price>
+                </Package>
+                <dosage>1 amp 2 times a day intravenous</dosage>
+            </Version>
+        </Versions>
+    </Medicine>
+</st3:Pharmaceuticals>

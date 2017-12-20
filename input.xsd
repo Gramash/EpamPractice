@@ -1,0 +1,66 @@
+<xsd:schema attributeFormDefault="unqualified"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://nure.ua/garmash/SummaryTask3/entity"
+            xmlns:tns="http://nure.ua/garmash/SummaryTask3/entity">
+
+    <xsd:element name="Pharmaceuticals">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Medicine" type="tns:Medicine" maxOccurs="unbounded">
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <xsd:complexType name="Medicine" mixed="true">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:token"/>
+            <xsd:element name="pharm" type="xsd:token"/>
+            <xsd:element name="group" type="xsd:token"/>
+            <xsd:element name="analogs" type="xsd:token" maxOccurs="unbounded"/>
+            <xsd:element name="Versions" type="tns:Versions"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:int" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="Versions">
+        <xsd:sequence>
+            <xsd:element name="Version" type="tns:Version" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Version">
+        <xsd:sequence>
+            <xsd:element name="drugType" type="xsd:token"/>
+            <xsd:element name="pharmAnalog" type="xsd:token"/>
+            <xsd:element name="Certificate" type="tns:Certificate"/>
+            <xsd:element name="Package" type="tns:Package"/>
+            <xsd:element name="dosage" type="xsd:token"/>
+        </xsd:sequence>
+        <xsd:attribute name="versionNo" type="xsd:int" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="Certificate">
+        <xsd:sequence>
+            <xsd:element name="certificateNo">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:int">
+                        <xsd:minInclusive value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="validationDate" type="xsd:date"/>
+            <xsd:element name="validationExpire" type="xsd:date"/>
+            <xsd:element name="organisation" type="xsd:token"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="Package">
+        <xsd:sequence>
+            <xsd:element name="type" type="xsd:token"/>
+            <xsd:element name="amount" type="xsd:int"/>
+            <xsd:element name="price" type="xsd:double"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>
