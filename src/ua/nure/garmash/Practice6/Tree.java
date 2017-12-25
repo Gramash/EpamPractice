@@ -42,9 +42,9 @@ public class Tree<E extends Comparable<E>> {
             root = new Node<>(value);
             return true;
         }
-        if (currentNode.value.equals(value)) {
-            System.out.println("Duplicate value " + value + " already exists int the tree");
-            return false;
+            if (currentNode.value.equals(value)) {
+                System.out.println("Duplicate value " + value + " already exists int the tree");
+                return false;
         }
         Node<E> toBeAdded = new Node<>(value);
         if (currentNode.value.compareTo(value) > 0) {  //8>3
