@@ -51,8 +51,9 @@ public class Part2 {
         public static void removeButOneIterator(List list, int spacing) { // 1 2 3 4 5 6 7 8 9
 
             long startTime = System.currentTimeMillis();
+            Iterator listIt;
             while (list.size() > 1) {
-                Iterator listIt = list.iterator();
+                listIt = list.iterator();
                 if (list.size() > spacing) {
                     for (int i = 0; i < spacing; i++) {
                         listIt.next();
@@ -67,10 +68,6 @@ public class Part2 {
             long endTime = System.currentTimeMillis();
             System.out.println(list.getClass().getSimpleName() + " time spent with Iterator: " + (endTime - startTime));
         }
-
-
     }
-
-
 }
 

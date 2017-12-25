@@ -10,14 +10,14 @@ public class Part5 {
 				
 		System.out.println("~~~~~~~");
 		tree.add(new Integer[] {1, 2, 5, 4, 6, 0});
-		tree.print();
+//		tree.print();
 				
 		System.out.println("~~~~~~~");
 		System.out.println(tree.remove(5));
 		System.out.println(tree.remove(5));		
 
 		System.out.println("~~~~~~~");
-		tree.print();
+//		tree.print();
 	}
 
 }

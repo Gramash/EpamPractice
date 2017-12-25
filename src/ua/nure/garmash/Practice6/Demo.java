@@ -3,7 +3,7 @@ package ua.nure.garmash.Practice6;
 public class Demo {
 	
 	public static void main(String[] args) throws Exception {
-		System.out.println("~~~~~~~~~~~~Part1");
+		System.out.println("~~~~~~~~~~~~Demo");
 		Part1.main(args);
 		
 		System.out.println("~~~~~~~~~~~~Part2");

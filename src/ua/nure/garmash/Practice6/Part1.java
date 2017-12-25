@@ -92,6 +92,7 @@ public class Part1 {
                 wc.get(temp).setFrequency(wc.get(temp).getFrequency() + 1);
             } else {
                 wc.add(word);
+                word.setFrequency(1);
             }
             return false;
         }

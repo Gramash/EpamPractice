@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 
 public class Part5 extends Thread {
-    static long[] startPosition = {0, 22, 44, 66, 88, 110, 132, 154, 176, 198};
-    static Writer writer = new Writer();
-    static Thread threads[] = new Thread[10];
+    private static long[] startPosition = {0, 22, 44, 66, 88, 110, 132, 154, 176, 198};
+    private static Writer writer = new Writer();
+    private static Thread threads[] = new Thread[10];
 
     public static void main(String[] args) throws IOException, InterruptedException {
         for (int i = 0; i < 10; i++) {

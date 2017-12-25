@@ -10,9 +10,9 @@ import java.util.Scanner;
 
 public class Part5 {
 
-    public static final String RU_LOCALIZATION = "resources_ru.properties";
-    public static final String EN_LOCALIZATION = "resources_en.properties";
-    public static final String STOP_WORD = "stop";
+    private static final String RU_LOCALIZATION = "resources_ru.properties";
+    private static final String EN_LOCALIZATION = "resources_en.properties";
+    private static final String STOP_WORD = "stop";
 
     public static void main(String[] args) throws IOException {
         Props props = new Props();
@@ -38,36 +38,39 @@ public class Part5 {
 
     private static class Props {
         ReadFromConsole rfc = new ReadFromConsole();
-        final Properties prop = new Properties();
+        final Properties properties = new Properties();
         boolean loaded;
 
-        public Properties getProp() throws IOException {
+        public Properties getProperties() throws IOException {
             loaded = false;
-            {
-                if (rfc.localisation.equals("ru")) {
-                    InputStream ruLocal = new FileInputStream(RU_LOCALIZATION);
-                    prop.load(new InputStreamReader(ruLocal, Charset.forName("UTF-8")));
-                    loaded = true;
-                }
-                if (rfc.localisation.equals("en")) {
-                    InputStream enLocal = new FileInputStream(EN_LOCALIZATION);
-                    prop.load(new InputStreamReader(enLocal, Charset.forName("UTF-8")));
-                    loaded = true;
-                }
-
+            if(rfc.localisation==null) {
+                System.err.println("Failed to load property file. Localization is null");
+                return null;
             }
-            return prop;
+            if (rfc.localisation.equals("ru")) {
+                InputStream ruLocal = new FileInputStream(RU_LOCALIZATION);
+                properties.load(new InputStreamReader(ruLocal, Charset.forName("UTF-8")));
+                loaded = true;
+            }
+            if (rfc.localisation.equals("en")) {
+                InputStream enLocal = new FileInputStream(EN_LOCALIZATION);
+                properties.load(new InputStreamReader(enLocal, Charset.forName("UTF-8")));
+                loaded = true;
+            }
+
+            return properties;
         }
 
         public void printPropValue() throws IOException {
             rfc.read();
             if (rfc.input[0] != null && rfc.input[0].equals(STOP_WORD)) return;
+
             try {
-                getProp();
+                getProperties();
                 if (!loaded) {
-                    System.out.println("please specify correct localization." +
+                    System.err.println("please specify correct key + localization values. " +
                             "Available localizations are: \"en\", \"ru\"");
-                } else if (!prop.containsKey(rfc.key)) {
+                } else if (!properties.containsKey(rfc.key)) {
                     System.out.println("There is no such key for specified localization");
                 } else {
                     System.out.println(returnPropValue());
@@ -79,7 +82,7 @@ public class Part5 {
         }
 
         public String returnPropValue() {
-            return prop.getProperty(rfc.key);
+            return properties.getProperty(rfc.key);
         }
     }
 }
