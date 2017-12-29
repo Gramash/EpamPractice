@@ -59,7 +59,7 @@ public class Part1 {
             }
             resultString.append(System.lineSeparator());
         }
-//        System.out.println(eMails.toString());
+//        System.out.println(eMails.print());
         return resultString.toString();
     }
 

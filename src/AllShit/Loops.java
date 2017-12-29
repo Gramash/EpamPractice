@@ -1,7 +1,5 @@
 package AllShit;
 
-import java.util.Arrays;
-
 public class Loops {
     public static void parallelLoop() {
         int i;
@@ -12,8 +10,8 @@ public class Loops {
             ascendentArray[i] = i + 1;
             descendentArray[j - 1] = j;
         }
-//        System.out.println(Arrays.toString(ascendentArray));
-//        System.out.println(Arrays.toString(descendentArray));
+//        System.out.println(Arrays.print(ascendentArray));
+//        System.out.println(Arrays.print(descendentArray));
     }
 
     public static void everyOther(int arr[], int arr2[]) { // 2,2,3,4,6,8,3,3,5

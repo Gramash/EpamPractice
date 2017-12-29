@@ -197,7 +197,7 @@ public class DBManager {
     }
 
     public void setGroupsForUsers(User user, Group... groups) {
-        PreparedStatement prst = null;
+        PreparedStatement prst;
         try (Connection con = DriverManager.getConnection(url)) {
             prst = con.prepareStatement(CREATE_USERS_GROUPS);
             con.setAutoCommit(false);

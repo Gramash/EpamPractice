@@ -27,7 +27,7 @@ public class Part2 {
 
     private static class ListForIterator {
 
-        public void fillList(List list, int capacity) {
+        public void fillList(List<Integer> list, int capacity) {
             for (int i = 0; i < capacity; i++) {
                 list.add(1);
             }
@@ -36,7 +36,7 @@ public class Part2 {
 
         public void removeButOne(int spacing, List list) {
             long startTime = System.currentTimeMillis();
-            while (list.size() > 1) {
+            while (list.size() >= 4) {
                 for (int i = 0; i < list.size(); i = i + spacing) {
                     list.remove(i);
                 }

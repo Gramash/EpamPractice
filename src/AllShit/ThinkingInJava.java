@@ -17,7 +17,7 @@ public class ThinkingInJava {
 //        int [] arr = {2,2,3,4,6,8,3,3,5};
 //        int [] arr2 = new int [arr.length];
 //        Loops.everyOther(arr,arr2);
-//        System.out.println(Arrays.toString(arr2));
+//        System.out.println(Arrays.print(arr2));
         System.out.println(SwitchTest.switchCase(1));
     }
 }

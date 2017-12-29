@@ -51,7 +51,7 @@ public class Part5 extends Thread {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            throw new Error("All went wrong");
+            throw new Error("cant write to file");
         }
 
     }

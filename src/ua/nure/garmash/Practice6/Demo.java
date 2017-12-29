@@ -4,10 +4,10 @@ public class Demo {
 	
 	public static void main(String[] args) throws Exception {
 		System.out.println("~~~~~~~~~~~~Demo");
-		Part1.main(args);
+//		Part1.main(args);
 		
 		System.out.println("~~~~~~~~~~~~Part2");
-		Part2.main(args);
+//		Part2.main(args);
 
 		System.out.println("~~~~~~~~~~~~Part3");
 //		Part3.main(args);
@@ -16,10 +16,10 @@ public class Demo {
 //		Part4.main(args);
 		
 		System.out.println("~~~~~~~~~~~~Part5");
-		Part5.main(args);		
+//		Part5.main(args);
 
-		System.out.println("~~~~~~~~~~~~Part6");
-		Part6.main(args);		
+		System.out.println("~~~~~~~~~~~~Part7");
+		Part6.main(new String[] { "--task", "length", "--input", "part6.txt"});
 
 		System.out.println("~~~~~~~~~~~~Part7");
 //		Part7.main(args);

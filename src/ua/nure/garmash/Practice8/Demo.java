@@ -27,18 +27,19 @@ public class Demo {
 
 //        dbManager.insertUser(User.createUser("obama"));
         printList(dbManager.findAllUsers());
-        // users  ==> [ivanov, petrov, obama]
+//         users  ==> [ivanov, petrov, obama]
 
-        //Part 2 =========================
+        System.out.println("Part 2 =========================");
 //        dbManager.insertGroup(Group.createGroup("teamB"));
 //        dbManager.insertGroup(Group.createGroup("teamC"));
-        printList(dbManager.findAllGroups());
+//        printList(dbManager.findAllGroups());
         User userPetrov = dbManager.getUser("petrov");
         User userIvanov = dbManager.getUser("ivanov");
         User userObama = dbManager.getUser("obama");
         Group teamA = dbManager.getGroup("teamA");
         Group teamB = dbManager.getGroup("teamB");
         Group teamC = dbManager.getGroup("teamC");
+        System.out.println();
 //        dbManager.setGroupsForUsers(userIvanov, teamA);
 //        dbManager.setGroupsForUsers(userPetrov, teamA, teamB);
 //        dbManager.setGroupsForUsers(userObama, teamA, teamB, teamC);
@@ -48,7 +49,7 @@ public class Demo {
             System.out.println("~~~~~");
         }
 
-//        dbManager.deleteGroup(teamA);
+        dbManager.deleteGroup(teamA);
         teamC.setName("teamX");
         dbManager.updateGroup(teamC);
     }
